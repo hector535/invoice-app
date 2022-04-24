@@ -1,0 +1,38 @@
+.container--light,
+.container--dark {
+  padding: 2em;
+
+  border-radius: 0px 0px 8px 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: var(--fs-300);
+  line-height: 1.125rem;
+  letter-spacing: -0.0143229375rem;
+}
+
+.container--dark {
+  background-color: var(--clr-0C0E16);
+  color: #fff;
+}
+
+.container--light {
+  background-color: #373b53;
+  color: #fff;
+}
+
+.total {
+  font-weight: 700;
+  font-size: var(--fs-800);
+  line-height: 2rem;
+  letter-spacing: -0.0260416875rem;
+}
+
+@media (min-width: 48rem) {
+  .total {
+    font-size: 1.5rem;
+  }
+}

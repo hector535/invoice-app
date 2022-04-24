@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# starter-files
+/starter-files
+
 # testing
 /coverage
 

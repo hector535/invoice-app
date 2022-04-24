@@ -1,0 +1,23 @@
+.main {
+  margin: 0 auto;
+  width: 20.4375rem;
+}
+
+@media (min-width: 48rem) {
+  .main {
+    width: 42rem;
+  }
+}
+
+@media (min-width: 90rem) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 103px minmax(0, 1fr);
+  }
+
+  .main {
+    margin: 4.5rem auto;
+    width: 730px;
+    grid-column: 2 / 3;
+  }
+}

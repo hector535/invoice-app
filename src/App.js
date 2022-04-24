@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route, Redirect } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import AllInvoicesPage from "./components/pages/AllInvoicesPage";
+import InvoiceDetailPage from "./components/pages/InvoiceDetailPage";
+import NewInvoicePage from "./components/pages/NewInvoicePage";
+import EditInvoicePage from "./components/pages/EditInvoicePage";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/invoices" />
+        </Route>
+        <Route path="/invoices/new">
+          <NewInvoicePage />
+        </Route>
+        <Route path="/invoices/:id/edit">
+          <EditInvoicePage />
+        </Route>
+        <Route path="/invoices/:id">
+          <InvoiceDetailPage />
+        </Route>
+        <Route path="/invoices">
+          <AllInvoicesPage />
+        </Route>
+        <Route path="*">
+          <Redirect to="/invoices" />
+        </Route>
+      </Switch>
+    </Layout>
   );
 }
 

@@ -1,0 +1,17 @@
+.container--light,
+.container--dark {
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.container--dark {
+  background-color: var(--clr-1E2139);
+}
+
+.container--light {
+  background-color: #fff;
+}

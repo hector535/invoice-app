@@ -1,0 +1,129 @@
+.modal-title--light,
+.modal-title--dark {
+  font-weight: 700;
+  font-size: var(--fs-800);
+  line-height: 2rem;
+  letter-spacing: -0.0260416875rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.modal-title--dark {
+  color: #fff;
+}
+
+.modal-title--light {
+  color: #0c0e16;
+}
+
+.modal-message--light,
+.modal-message--dark {
+  font-weight: 500;
+  font-size: var(--fs-400);
+  line-height: 1.375rem;
+  letter-spacing: -0.015625rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-message--dark {
+  color: var(--clr-888EB0);
+}
+
+.modal-message--light {
+  color: #888eb0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-actions button {
+  margin-right: 0.5rem;
+}
+
+.modal-actions button:last-child {
+  margin-right: 0;
+}
+
+.actions-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75em 2em;
+}
+
+.actions-bar button {
+  margin-right: 0.5rem;
+}
+
+.actions-bar button:last-child {
+  margin-right: 0;
+}
+
+.status-badge-actions-container--light,
+.status-badge-actions-container--dark {
+  padding: 2em;
+
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.status-badge-actions-container--dark {
+  background-color: var(--clr-1E2139);
+  color: #fff;
+}
+
+.status-badge-actions-container--light {
+  background-color: #fff;
+  color: #858bb2;
+}
+
+.status-badge-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-badge-container p {
+  font-weight: 500;
+  font-size: var(--fs-400);
+  line-height: 0.9375rem;
+  letter-spacing: -0.015625rem;
+  color: var(--clr-DFE3FA);
+}
+
+@media (min-width: 48rem) {
+  .status-badge-actions-container--light,
+  .status-badge-actions-container--dark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.67em;
+  }
+
+  .status-badge-container p {
+    margin-right: 1rem;
+    color: var(--clr-858BB2);
+  }
+
+  .status-actions button {
+    margin-right: 0.5rem;
+  }
+
+  .status-actions button:last-child {
+    margin-right: 0;
+  }
+
+  .modal-title--light,
+  .modal-title--dark {
+    font-size: 1.5rem;
+    margin-bottom: 0.8125rem;
+  }
+
+  .modal-message--light,
+  .modal-message--dark {
+    margin-bottom: 1rem;
+  }
+}

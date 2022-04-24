@@ -1,0 +1,31 @@
+.container--light,
+.container--dark {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 616px;
+  height: calc(100vh - 80px - 91px);
+  border-radius: 0px 20px 0px 0px;
+  padding: 4.67em;
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.container--dark {
+  background-color: var(--clr-141625);
+}
+
+.container--light {
+  background-color: #ffffff;
+}
+
+@media (min-width: 90rem) {
+  .container--light,
+  .container--dark {
+    width: 60%;
+    max-width: 1000px;
+    left: 103px;
+    top: 0;
+    height: calc(100vh - 91px);
+  }
+}

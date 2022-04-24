@@ -1,0 +1,39 @@
+.container--light,
+.container--dark {
+  padding: 2em;
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+  color: var(--clr-DFE3FA);
+
+  font-weight: 500;
+  font-size: var(--fs-400);
+  line-height: 0.9375rem;
+  letter-spacing: -0.015625rem;
+  margin-bottom: 9.1875rem;
+}
+
+.container--dark {
+  background-color: var(--clr-1E2139);
+}
+
+.container--light {
+  background-color: #fff;
+}
+
+@media (min-width: 48rem) {
+  .container--light,
+  .container--dark {
+    padding: 2.67em;
+  }
+  .header-sender-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 90rem) {
+  .container--light,
+  .container--dark {
+    padding: 4em;
+  }
+}

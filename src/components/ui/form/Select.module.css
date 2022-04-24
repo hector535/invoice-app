@@ -1,0 +1,130 @@
+.container {
+  margin-bottom: 1.5rem;
+  height: 92px;
+}
+
+.select {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.select:hover {
+  outline: 1px solid #7c5dfa;
+}
+
+.label--light,
+.label--dark {
+  display: inline-block;
+  font-weight: 500;
+  font-size: var(--fs-400);
+  line-height: 0.9375rem;
+  letter-spacing: -0.015625rem;
+
+  margin-bottom: 0.625rem;
+}
+
+.label--dark {
+  color: var(--clr-888EB0);
+}
+
+.label--light {
+  color: #7e88c3;
+}
+
+.select-selected--light,
+.select-selected--dark {
+  border-radius: 4px;
+}
+
+.select-selected--dark {
+  border: 1px solid var(--clr-252945);
+  background-color: var(--clr-1E2139);
+  color: #fff;
+}
+
+.select-selected--light {
+  background-color: #fff;
+  color: #0c0e16;
+  border: 1px solid #dfe3fa;
+}
+
+.select-selected--light::after,
+.select-selected--dark::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-image: url("../../../assets/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.select-selected--light,
+.select-selected--dark,
+.select-items--light div,
+.select-items--dark div {
+  padding: 1.417em 1.67em;
+  width: 100%;
+
+  font-weight: 700;
+  font-size: var(--fs-400);
+  line-height: 0.9375rem;
+  letter-spacing: -0.015625rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.select-items--light div,
+.select-items--dark div {
+  border: 2px solid transparent;
+}
+
+.select-items--dark div {
+  color: var(--clr-DFE3FA);
+  border-color: transparent transparent var(--clr-1E2139) transparent;
+}
+
+.select-items--light div {
+  color: #0c0e16;
+  border-color: transparent transparent #dfe3fa transparent;
+}
+
+.select-items--light,
+.select-items--dark {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  z-index: 99;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.select-items--dark {
+  background-color: var(--clr-252945);
+}
+
+.select-items--light {
+  background-color: #fff;
+}
+
+.select-items--light div:hover,
+.select-items--dark div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #9277ff;
+}
+
+.error {
+  font-weight: 600;
+  font-size: 0.625rem;
+  line-height: 0.9375rem;
+  letter-spacing: -0.01302083125rem;
+
+  color: var(--clr-EC5757);
+}

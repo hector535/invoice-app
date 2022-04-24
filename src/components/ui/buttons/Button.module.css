@@ -1,0 +1,58 @@
+.btn {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  padding: 1.41em 2em;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: var(--fs-400);
+  line-height: 0.9375rem;
+  letter-spacing: -0.015625rem;
+  border-radius: 24px;
+  border: none;
+}
+
+.btn--red {
+  background-color: var(--clr-EC5757);
+  color: #fff;
+}
+
+.btn--red:hover {
+  background-color: #ff9797;
+}
+
+.btn--violet {
+  background-color: var(--clr-7C5DFA);
+  color: #fff;
+}
+
+.btn--violet:hover {
+  background-color: #9277ff;
+}
+
+.btn--light-gray {
+  background-color: #f9fafe;
+  color: #7e88c3;
+}
+
+.btn--light-gray:hover {
+  background-color: #dfe3fa;
+}
+
+.btn--dark-gray {
+  background-color: var(--clr-373B53);
+  color: var(--clr-DFE3FA);
+}
+
+.btn--dark-gray:hover {
+  background-color: #1e2139;
+}
+
+.btn--dark-blue {
+  background-color: var(--clr-252945);
+  color: var(--clr-DFE3FA);
+}
+
+.btn--dark-blue:hover {
+  background-color: #fff;
+  color: #7e88c3;
+}

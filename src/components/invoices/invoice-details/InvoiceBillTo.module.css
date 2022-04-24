@@ -1,0 +1,93 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin-bottom: 2rem;
+}
+
+.title--light,
+.title--dark {
+  font-weight: 500;
+  font-size: var(--fs-400);
+  line-height: 0.9375rem;
+  letter-spacing: -0.015625rem;
+  margin-bottom: 0.75rem;
+}
+
+.title--light {
+  color: #7e88c3;
+}
+
+.title--dark {
+  color: #dfe3fa;
+}
+
+.highlight--light,
+.highlight--dark {
+  font-weight: 700;
+  font-size: var(--fs-500);
+  line-height: 1.25rem;
+  letter-spacing: -0.01953125rem;
+  margin-bottom: 0.5rem;
+}
+
+.highlight--dark {
+  color: #fff;
+}
+
+.highlight--light {
+  color: #0c0e16;
+}
+
+.street--light,
+.street--dark,
+.post-code--light,
+.post-code--dark {
+  grid-column: 2 / 3;
+}
+
+.payment-due {
+  margin-top: 2rem;
+}
+
+.street--light,
+.street--dark,
+.city--light,
+.city--dark,
+.post-code--light,
+.post-code--dark,
+.country--light,
+.country--dark {
+  font-weight: 500;
+  font-size: var(--fs-300);
+  line-height: 1.25rem;
+  letter-spacing: -0.0143229375rem;
+}
+
+.street--light,
+.city--light,
+.post-code--light,
+.country--light {
+  color: #7e88c3;
+}
+
+.street--dark,
+.city--dark,
+.post-code--dark,
+.country--dark {
+  color: #dfe3fa;
+}
+
+.col-1 {
+  grid-column: 1 / 2;
+}
+
+.col-2 {
+  grid-column: 2 / 3;
+}
+
+@media (min-width: 48rem) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

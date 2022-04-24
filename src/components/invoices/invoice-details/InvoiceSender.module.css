@@ -1,0 +1,22 @@
+.container--light,
+.container--dark {
+  font-weight: 500;
+  font-size: var(--fs-300);
+  line-height: 1.125rem;
+  letter-spacing: -0.0143229375rem;
+  margin-bottom: 1.9375rem;
+}
+
+.container--dark {
+  color: #dfe3fa;
+}
+
+.container--light {
+  color: #7e88c3;
+}
+
+@media (min-width: 48rem) {
+  .container {
+    text-align: right;
+  }
+}

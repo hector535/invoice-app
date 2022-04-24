@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.month-year--light,
+.month-year--dark {
+  font-weight: 700;
+  font-size: var(--fs-400);
+  line-height: 0.9375rem;
+  text-align: center;
+  letter-spacing: -0.015625rem;
+}
+
+.month-year--dark {
+  color: var(--clr-DFE3FA);
+}
+
+.month-year--light {
+  color: #0c0e16;
+}

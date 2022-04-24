@@ -1,0 +1,31 @@
+.container--light,
+.container--dark {
+  padding: 2.67em;
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+
+  position: fixed;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  width: 90%;
+  z-index: 2;
+}
+
+.container--dark {
+  background-color: var(--clr-1E2139);
+}
+
+.container--light {
+  background-color: #fff;
+}
+
+@media (min-width: 48rem) {
+  .container--light,
+  .container--dark {
+    padding: 4em;
+    width: 30rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,143 @@
+.item--dark,
+.item--light {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  padding: 2em;
+  margin-bottom: 1rem;
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr;
+}
+
+.item--dark {
+  background-color: var(--clr-1E2139);
+}
+.item--light {
+  background-color: #fff;
+}
+
+.item:hover {
+  outline: 1px solid #7c5dfa;
+}
+
+.id {
+  margin-bottom: 1.5rem;
+}
+
+.client--dark,
+.client--light,
+.due {
+  font-weight: 500;
+  font-size: var(--fs-400);
+  line-height: 0.9375rem;
+  letter-spacing: -0.015625rem;
+}
+
+.client--dark,
+.client--light {
+  justify-self: right;
+}
+
+.client--dark {
+  color: #fff;
+}
+.client--light {
+  color: #858bb2;
+}
+
+.due--light,
+.due--dark {
+  margin-bottom: 0.5rem;
+  grid-column: 1 / 2;
+}
+
+.due--dark {
+  color: var(--clr-DFE3FA);
+}
+
+.due--light {
+  color: #7e88c3;
+}
+
+.amount--light,
+.amount--dark {
+  font-weight: 700;
+  font-size: var(--fs-600);
+  line-height: 1.5rem;
+  letter-spacing: -0.05rem;
+  grid-column: 1 / 2;
+}
+
+.amount--dark {
+  color: #fff;
+}
+
+.amount--light {
+  color: #0c0e16;
+}
+
+.badge {
+  grid-column: 2 / 3;
+  grid-row: -1 / 4;
+  justify-self: right;
+}
+
+@media (min-width: 48rem) {
+  .item--dark,
+  .item--light {
+    padding: 1.33em 2em;
+    grid-template-columns: 70px 120px 1fr 1fr 104px 8px;
+    grid-template-rows: none;
+    justify-items: center;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  .item--dark::after,
+  .item--light::after {
+    content: "";
+    width: 7px;
+    height: 10px;
+    background-image: url("../../assets/icon-arrow-right.svg");
+    background-repeat: no-repeat;
+    justify-self: right;
+    order: 6;
+  }
+
+  .id {
+    grid-column: 1 / 2;
+    order: 1;
+    margin-bottom: 0;
+  }
+
+  .client--dark,
+  .client--light {
+    grid-column: 3 / 4;
+    justify-self: auto;
+    order: 3;
+  }
+
+  .due--light,
+  .due--dark {
+    grid-column: 2 / 3;
+    margin-bottom: 0;
+    order: 2;
+  }
+
+  .amount--light,
+  .amount--dark {
+    grid-column: 4 / 5;
+    order: 4;
+    justify-self: right;
+  }
+
+  .badge {
+    grid-column: 5 / 6;
+    grid-row: auto;
+    justify-self: auto;
+    order: 5;
+  }
+}
