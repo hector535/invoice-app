@@ -1,0 +1,99 @@
+:root {
+  --clr-primary-300: 252, 100%, 73%;
+  --clr-primary-400: 252, 94%, 67%;
+
+  --clr-secondary-100: 240, 27%, 98%;
+  --clr-secondary-200: 231, 75%, 93%;
+  --clr-secondary-500: 231, 36%, 63%;
+  --clr-secondary-600: 231, 20%, 61%;
+  --clr-secondary-750: 233, 30%, 21%;
+  --clr-secondary-800: 233, 31%, 17%;
+  --clr-secondary-850: 233, 30%, 11%;
+  --clr-secondary-900: 231, 28%, 7%;
+
+  --clr-neutral-100: 0, 0%, 100%;
+
+  --clr-accent-red-300: 0, 100%, 80%;
+  --clr-accent-red-400: 0, 80%, 63%;
+  --clr-accent-green-400: 160, 67%, 52%;
+  --clr-accent-orange-400: 34, 100%, 50%;
+  --clr-accent-black-400: 231, 20%, 27%;
+
+  --fw-light: 400;
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  --ff-regular: "League Spartan", sans-serif;
+
+  --page-bg-color: 240, 27%, 98%;
+
+  --container-bg-color: 0, 0%, 100%;
+
+  --sidebar-bg-color: 231, 20%, 27%;
+
+  --heading-text-color: 231, 28%, 7%;
+  --text-color: 231, 20%, 61%;
+
+  --invoice-highlight-text-color: 231, 28%, 7%;
+  --invoice-status-text-color: 231, 23%, 61%;
+  --invoice-text-color: 231, 36%, 63%;
+
+  --invoice-item-client-text-color: 231, 23%, 61%;
+
+  --secondary-btn-bg-color: 231, 67%, 99%;
+  --secondary-btn-text-color: 231, 36%, 63%;
+  --secondary-btn-hover-bg-color: 231, 73%, 93%;
+  --secondary-btn-hover-text-color: 231, 36%, 63%;
+
+  --tertiary-btn-bg-color: 231, 20%, 27%;
+  --tertiary-btn-text-color: 231, 20%, 61%;
+  --tertiary-btn-hover-bg-color: 231, 28%, 7%;
+  --tertiary-btn-hover-text-color: 231, 20%, 61%;
+
+  --label-text-color: 231, 36%, 63%;
+  --input-border-color: 231, 75%, 93%;
+  --input-text-color: 231, 28%, 7%;
+
+  --table-highlight-content-text-color: 231, 28%, 7%;
+  --table-content-text-color: 231, 36%, 63%;
+  --table-header-text-color: 231, 36%, 63%;
+  --table-body-bg-color: 231, 67%, 99%;
+  --table-footer-bg-color: 231, 20%, 27%;
+}
+
+[data-theme="dark"] {
+  --page-bg-color: 231, 30%, 11%;
+
+  --container-bg-color: 233, 31%, 17%;
+
+  --sidebar-bg-color: 233, 31%, 17%;
+
+  --heading-text-color: 0, 0%, 100%;
+  --text-color: 231, 75%, 93%;
+
+  --invoice-highlight-text-color: 0, 0%, 100%;
+  --invoice-status-text-color: 231, 75%, 93%;
+  --invoice-text-color: 231, 75%, 93%;
+
+  --invoice-item-client-text-color: 0, 0%, 100%;
+
+  --secondary-btn-bg-color: 233, 30%, 21%;
+  --secondary-btn-text-color: 231, 75%, 93%;
+  --secondary-btn-hover-bg-color: 0, 0%, 100%;
+  --secondary-btn-hover-text-color: 231, 75%, 93%;
+
+  --tertiary-btn-bg-color: 231, 20%, 27%;
+  --tertiary-btn-text-color: 231, 75%, 93%;
+  --tertiary-btn-hover-bg-color: 233, 31%, 17%;
+  --tertiary-btn-hover-text-color: 231, 75%, 93%;
+
+  --label-text-color: 231, 75%, 93%;
+  --input-border-color: 233, 30%, 21%;
+  --input-text-color: 0, 0%, 100%;
+
+  --table-highlight-content-text-color: 0, 0%, 100%;
+  --table-content-text-color: 231, 75%, 93%;
+  --table-header-text-color: 231, 75%, 93%;
+  --table-body-bg-color: 233, 30%, 21%;
+  --table-footer-bg-color: 231, 28%, 7%;
+}
