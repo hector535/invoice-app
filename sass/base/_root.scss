@@ -3,9 +3,12 @@
   --clr-primary-400: 252, 94%, 67%;
 
   --clr-secondary-100: 240, 27%, 98%;
+  --clr-secondary-150: 231, 67%, 99%;
+  --clr-secondary-175: 231, 73%, 93%;
   --clr-secondary-200: 231, 75%, 93%;
   --clr-secondary-500: 231, 36%, 63%;
   --clr-secondary-600: 231, 20%, 61%;
+  --clr-secondary-625: 231, 23%, 61%;
   --clr-secondary-750: 233, 30%, 21%;
   --clr-secondary-800: 233, 31%, 17%;
   --clr-secondary-850: 233, 30%, 11%;
@@ -25,75 +28,77 @@
 
   --ff-regular: "League Spartan", sans-serif;
 
-  --page-bg-color: 240, 27%, 98%;
+  --page-bg-color: hsl(var(--clr-secondary-100));
 
-  --container-bg-color: 0, 0%, 100%;
+  --container-bg-color: hsl(var(--clr-neutral-100));
 
-  --sidebar-bg-color: 231, 20%, 27%;
+  --sidebar-bg-color: hsl(var(--clr-accent-black-400));
 
-  --heading-text-color: 231, 28%, 7%;
-  --text-color: 231, 20%, 61%;
+  --heading-text-color: hsl(var(--clr-secondary-900));
+  --text-color: hsl(var(--clr-secondary-600));
 
-  --invoice-highlight-text-color: 231, 28%, 7%;
-  --invoice-status-text-color: 231, 23%, 61%;
-  --invoice-text-color: 231, 36%, 63%;
+  --invoice-highlight-text-color: hsl(var(--clr-secondary-900));
+  --invoice-status-text-color: hsl(var(--clr-secondary-625));
+  --invoice-text-color: hsl(var(--clr-secondary-500));
 
-  --invoice-item-client-text-color: 231, 23%, 61%;
+  --invoice-item-client-text-color: hsl(var(--clr-secondary-625));
 
-  --secondary-btn-bg-color: 231, 67%, 99%;
-  --secondary-btn-text-color: 231, 36%, 63%;
-  --secondary-btn-hover-bg-color: 231, 73%, 93%;
-  --secondary-btn-hover-text-color: 231, 36%, 63%;
+  --secondary-btn-bg-color: hsl(var(--clr-secondary-150));
+  --secondary-btn-text-color: hsl(var(--clr-secondary-500));
+  --secondary-btn-hover-bg-color: hsl(var(--clr-secondary-175));
+  --secondary-btn-hover-text-color: hsl(var(--clr-secondary-500));
 
-  --tertiary-btn-bg-color: 231, 20%, 27%;
-  --tertiary-btn-text-color: 231, 20%, 61%;
-  --tertiary-btn-hover-bg-color: 231, 28%, 7%;
-  --tertiary-btn-hover-text-color: 231, 20%, 61%;
+  --tertiary-btn-bg-color: hsl(var(--clr-accent-black-400));
+  --tertiary-btn-text-color: hsl(var(--clr-secondary-600));
+  --tertiary-btn-hover-bg-color: hsl(var(--clr-secondary-900));
+  --tertiary-btn-hover-text-color: hsl(var(--clr-secondary-600));
 
-  --label-text-color: 231, 36%, 63%;
-  --input-border-color: 231, 75%, 93%;
-  --input-text-color: 231, 28%, 7%;
+  --label-text-color: hsl(var(--clr-secondary-500));
+  --input-border-color: hsl(var(--clr-secondary-200));
+  --input-bg-color: hsl(var(--clr-neutral-100));
+  --input-text-color: hsl(var(--clr-secondary-900));
 
-  --table-highlight-content-text-color: 231, 28%, 7%;
-  --table-content-text-color: 231, 36%, 63%;
-  --table-header-text-color: 231, 36%, 63%;
-  --table-body-bg-color: 231, 67%, 99%;
-  --table-footer-bg-color: 231, 20%, 27%;
+  --table-highlight-content-text-color: hsl(var(--clr-secondary-900));
+  --table-content-text-color: hsl(var(--clr-secondary-500));
+  --table-header-text-color: hsl(var(--clr-secondary-500));
+  --table-body-bg-color: hsl(var(--clr-secondary-150));
+  --table-footer-bg-color: hsl(var(--clr-accent-black-400));
 }
 
 [data-theme="dark"] {
-  --page-bg-color: 231, 30%, 11%;
+  --page-bg-color: hsl(var(--clr-secondary-850));
 
-  --container-bg-color: 233, 31%, 17%;
+  --container-bg-color: hsl(var(--clr-secondary-800));
 
-  --sidebar-bg-color: 233, 31%, 17%;
+  --sidebar-bg-color: hsl(var(--clr-secondary-800));
 
-  --heading-text-color: 0, 0%, 100%;
-  --text-color: 231, 75%, 93%;
+  --heading-text-color: hsl(var(--clr-neutral-100));
+  --text-color: hsl(var(--clr-secondary-200));
 
-  --invoice-highlight-text-color: 0, 0%, 100%;
-  --invoice-status-text-color: 231, 75%, 93%;
-  --invoice-text-color: 231, 75%, 93%;
+  --invoice-highlight-text-color: hsl(var(--clr-neutral-100));
+  --invoice-status-text-color: hsl(var(--clr-secondary-200));
+  --invoice-text-color: hsl(var(--clr-secondary-200));
 
-  --invoice-item-client-text-color: 0, 0%, 100%;
+  --invoice-item-client-text-color: hsl(var(--clr-neutral-100));
 
-  --secondary-btn-bg-color: 233, 30%, 21%;
-  --secondary-btn-text-color: 231, 75%, 93%;
-  --secondary-btn-hover-bg-color: 0, 0%, 100%;
-  --secondary-btn-hover-text-color: 231, 75%, 93%;
+  --secondary-btn-bg-color: hsl(var(--clr-secondary-750));
+  --secondary-btn-text-color: hsl(var(--clr-secondary-200));
+  --secondary-btn-hover-bg-color: hsl(var(--clr-neutral-100));
+  --secondary-btn-hover-text-color: hsl(var(--clr-secondary-200));
 
-  --tertiary-btn-bg-color: 231, 20%, 27%;
-  --tertiary-btn-text-color: 231, 75%, 93%;
-  --tertiary-btn-hover-bg-color: 233, 31%, 17%;
-  --tertiary-btn-hover-text-color: 231, 75%, 93%;
+  --tertiary-btn-bg-color: hsl(var(--clr-accent-black-400));
+  --tertiary-btn-text-color: hsl(var(--clr-secondary-200));
+  --tertiary-btn-hover-bg-color: hsl(var(--clr-secondary-800));
+  --tertiary-btn-hover-text-color: hsl(var(--clr-secondary-200));
 
-  --label-text-color: 231, 75%, 93%;
-  --input-border-color: 233, 30%, 21%;
-  --input-text-color: 0, 0%, 100%;
+  --label-text-color: hsl(var(--clr-secondary-200));
+  --input-border-color: hsl(var(--clr-secondary-750));
+  --input-bg-color: hsl(var(--clr-secondary-800));
+  --input-text-color: hsl(var(--clr-neutral-100));
 
-  --table-highlight-content-text-color: 0, 0%, 100%;
-  --table-content-text-color: 231, 75%, 93%;
-  --table-header-text-color: 231, 75%, 93%;
-  --table-body-bg-color: 233, 30%, 21%;
-  --table-footer-bg-color: 231, 28%, 7%;
+  --table-highlight-content-text-color: hsl(var(--clr-neutral-100));
+  --table-content-text-color: hsl(var(--clr-secondary-200));
+  --table-header-text-color: hsl(var(--clr-secondary-200));
+  --table-body-bg-color: hsl(var(--clr-secondary-750));
+  --table-footer-bg-color: hsl(var(--clr-secondary-900));
 }
