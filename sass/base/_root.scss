@@ -15,18 +15,23 @@
   --clr-secondary-900: 231, 28%, 7%;
 
   --clr-neutral-100: 0, 0%, 100%;
+  --clr-neutral-150: 0, 0%, 94%;
 
   --clr-accent-red-300: 0, 100%, 80%;
   --clr-accent-red-400: 0, 80%, 63%;
   --clr-accent-green-400: 160, 67%, 52%;
   --clr-accent-orange-400: 34, 100%, 50%;
   --clr-accent-black-400: 231, 20%, 27%;
+  --clr-accent-blue-400: 206, 67%, 39%;
 
   --fw-light: 400;
   --fw-regular: 500;
   --fw-bold: 700;
 
   --ff-regular: "League Spartan", sans-serif;
+
+  --input-height: 3rem;
+  --input-padding-inline: 1.25rem;
 
   --page-bg-color: hsl(var(--clr-secondary-100));
 
@@ -36,6 +41,8 @@
 
   --heading-text-color: hsl(var(--clr-secondary-900));
   --text-color: hsl(var(--clr-secondary-600));
+
+  --datepicker-day-hover-bg-color: hsl(var(--clr-neutral-150));
 
   --invoice-highlight-text-color: hsl(var(--clr-secondary-900));
   --invoice-status-text-color: hsl(var(--clr-secondary-625));
@@ -74,6 +81,8 @@
 
   --heading-text-color: hsl(var(--clr-neutral-100));
   --text-color: hsl(var(--clr-secondary-200));
+
+  --datepicker-day-hover-bg-color: hsl(var(--clr-accent-blue-400));
 
   --invoice-highlight-text-color: hsl(var(--clr-neutral-100));
   --invoice-status-text-color: hsl(var(--clr-secondary-200));
