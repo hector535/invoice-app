@@ -1,0 +1,211 @@
+.wrapper {
+  position: relative;
+}
+
+.calendar_icon {
+  position: absolute;
+  top: 0;
+  right: var(--input-padding-inline);
+  bottom: 0;
+  margin-block: auto;
+}
+
+.popper {
+  margin-top: 15px;
+}
+
+.calendar {
+  border: 1px solid var(--input-border-color);
+  border-radius: 8px;
+
+  color: var(--input-text-color);
+  background-color: var(--input-bg-color);
+
+  display: inline-block;
+
+  font-size: 0.75rem;
+  font-weight: var(--fw-regular);
+
+  position: relative;
+
+  :global {
+    .react-datepicker__aria-live {
+      border: 0;
+      -webkit-clip-path: circle(0);
+      clip-path: circle(0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    .react-datepicker__navigation {
+      background: none;
+      border: none;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 32px;
+      width: 32px;
+
+      overflow: hidden;
+      padding: 0;
+
+      position: absolute;
+      top: 2px;
+      z-index: 1;
+
+      text-align: center;
+      text-indent: -999em;
+
+      cursor: pointer;
+
+      &:hover *::before {
+        border-color: hsl(var(--clr-primary-400));
+      }
+    }
+
+    .react-datepicker__navigation--previous {
+      left: 2px;
+    }
+
+    .react-datepicker__navigation--next {
+      right: 2px;
+    }
+
+    .react-datepicker__navigation-icon {
+      font-size: 20px;
+      position: relative;
+      top: -1px;
+      width: 0;
+    }
+
+    .react-datepicker__navigation-icon--previous {
+      right: -2px;
+    }
+
+    .react-datepicker__navigation-icon--next {
+      left: -2px;
+    }
+
+    .react-datepicker__navigation-icon:before {
+      content: "";
+
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 3px 3px 0 0;
+
+      display: block;
+
+      height: 9px;
+      width: 9px;
+
+      position: absolute;
+      top: 13px;
+    }
+
+    .react-datepicker__navigation-icon--previous:before {
+      right: -7px;
+      transform: rotate(225deg);
+    }
+
+    .react-datepicker__navigation-icon--next:before {
+      left: -7px;
+      transform: rotate(45deg);
+    }
+
+    .react-datepicker__month-container {
+      float: left;
+
+      .react-datepicker__header {
+        border-bottom: 1px solid #aeaeae;
+        border-top-left-radius: 0.3rem;
+
+        padding: 8px 0;
+
+        position: relative;
+
+        text-align: center;
+
+        .react-datepicker__current-month {
+          font-size: 0.944rem;
+          font-weight: 700;
+
+          margin-top: 0;
+        }
+
+        .react-datepicker__day-names {
+          white-space: nowrap;
+
+          margin-bottom: -8px;
+
+          .react-datepicker__day-name {
+            display: inline-block;
+
+            font-weight: 700;
+            line-height: 1.7rem;
+            text-align: center;
+
+            margin: 0.166rem;
+
+            width: 1.7rem;
+          }
+        }
+      }
+
+      .react-datepicker__header:not(
+          .react-datepicker__header--has-time-select
+        ) {
+        border-top-right-radius: 0.3rem;
+      }
+
+      .react-datepicker__month {
+        margin: 0.4rem;
+        text-align: center;
+
+        .react-datepicker__week {
+          white-space: nowrap;
+
+          .react-datepicker__day {
+            display: inline-block;
+
+            margin: 0.166rem;
+
+            font-weight: var(--fw-bold);
+            line-height: 1.7rem;
+            text-align: center;
+
+            width: 1.7rem;
+
+            cursor: pointer;
+
+            &:hover {
+              background-color: var(--datepicker-day-hover-bg-color);
+              border-radius: 0.3rem;
+            }
+          }
+
+          .react-datepicker__day--selected {
+            background-color: #216ba5;
+            border-radius: 0.3rem;
+            color: #fff;
+
+            &:hover {
+              background-color: #1d5d90;
+            }
+          }
+
+          .react-datepicker__day--keyboard-selected {
+            background-color: var(--datepicker-day-hover-bg-color);
+            border-radius: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+}
