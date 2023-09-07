@@ -1,0 +1,68 @@
+.button {
+  border: 0;
+  border-radius: 100vmax;
+
+  height: 3rem;
+  width: 100%;
+
+  padding-inline: 1.5rem;
+
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.25px;
+
+  background-color: transparent;
+
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  appearance: none;
+
+  cursor: pointer;
+
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.primary {
+  background-color: hsl(var(--clr-primary-400));
+  color: hsl(var(--clr-neutral-100));
+
+  &:hover {
+    background-color: hsl(var(--clr-primary-300));
+  }
+}
+
+.secondary {
+  background-color: var(--secondary-btn-bg-color);
+  color: var(--secondary-btn-text-color);
+
+  &:hover {
+    background-color: var(--secondary-btn-hover-bg-color);
+    color: var(--secondary-btn-hover-text-color);
+  }
+}
+
+.tertiary {
+  background-color: var(--tertiary-btn-bg-color);
+  color: var(--tertiary-btn-text-color);
+
+  &:hover {
+    background-color: var(--tertiary-btn-hover-bg-color);
+    color: var(--tertiary-btn-hover-text-color);
+  }
+}
+
+.danger {
+  background-color: hsl(var(--clr-accent-red-400));
+  color: hsl(var(--clr-neutral-100));
+
+  &:hover {
+    background-color: hsl(var(--clr-accent-red-300));
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
