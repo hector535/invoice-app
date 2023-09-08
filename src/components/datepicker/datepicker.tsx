@@ -1,18 +1,16 @@
-import { ComponentProps } from "react";
 import BaseDatePicker from "react-datepicker";
-import styles from "./datepicker.module.scss";
+import clsx from "clsx";
 import { Icon } from "../icon/icon";
-
-type DatePickerProps = Omit<
-  ComponentProps<typeof BaseDatePicker>,
-  "className" | "popperClassName" | "calendarClassName"
->;
+import { DatePickerProps } from "./datepicker.type";
+import styles from "./datepicker.module.scss";
 
 export const DatePicker = (props: DatePickerProps) => {
+  const { className, ...restProps } = props;
+
   return (
-    <label className={styles.wrapper}>
+    <label className={clsx(styles.wrapper, className)}>
       <BaseDatePicker
-        {...props}
+        {...restProps}
         popperClassName={styles.popper}
         calendarClassName={styles.calendar}
         className="input_field"

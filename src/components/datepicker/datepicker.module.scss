@@ -28,6 +28,9 @@
 
   position: relative;
 
+  transition: background-color 0.4s ease, border-color 0.4s ease,
+    color 0.4s ease;
+
   :global {
     .react-datepicker__aria-live {
       border: 0;
@@ -66,6 +69,7 @@
       cursor: pointer;
 
       &:hover *::before {
+        transition: border-color 0.4s ease;
         border-color: hsl(var(--clr-primary-400));
       }
     }
@@ -184,6 +188,8 @@
 
             cursor: pointer;
 
+            transition: background-color 0.4s ease;
+
             &:hover {
               background-color: var(--datepicker-day-hover-bg-color);
               border-radius: 0.3rem;
@@ -195,6 +201,8 @@
             border-radius: 0.3rem;
             color: #fff;
 
+            transition: background-color 0.4s ease;
+
             &:hover {
               background-color: #1d5d90;
             }
@@ -203,6 +211,8 @@
           .react-datepicker__day--keyboard-selected {
             background-color: var(--datepicker-day-hover-bg-color);
             border-radius: 0.3rem;
+
+            transition: background-color 0.4s ease;
           }
         }
       }
