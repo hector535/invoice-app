@@ -10,6 +10,8 @@
 
   cursor: pointer;
 
+  -webkit-tap-highlight-color: transparent;
+
   transition: color 0.4s ease;
 
   span:last-child {
