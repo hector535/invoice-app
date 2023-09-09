@@ -9,6 +9,8 @@
   --clr-secondary-500: 231, 36%, 63%;
   --clr-secondary-600: 231, 20%, 61%;
   --clr-secondary-625: 231, 23%, 61%;
+  --clr-secondary-650: 231, 20%, 36%;
+  --clr-secondary-700: 232, 37%, 45%;
   --clr-secondary-750: 233, 30%, 21%;
   --clr-secondary-800: 233, 31%, 17%;
   --clr-secondary-850: 233, 30%, 11%;
@@ -17,6 +19,7 @@
   --clr-neutral-100: 0, 0%, 100%;
   --clr-neutral-150: 0, 0%, 94%;
   --clr-neutral-300: 216, 100%, 94%, 0.65;
+  --clr-neutral-900: 0, 0%, 0%;
 
   --clr-accent-red-300: 0, 100%, 80%;
   --clr-accent-red-400: 0, 80%, 63%;
@@ -29,15 +32,20 @@
   --fw-regular: 500;
   --fw-bold: 700;
 
-  --ff-regular: "League Spartan", sans-serif;
+  --ff-regular: "Spartan", sans-serif;
 
   --focus-outline-color: hsl(var(--clr-secondary-900));
+
+  --status-draft-text-color: hsl(var(--clr-accent-black-400));
+  --status-draft-bg-color: hsl(var(--clr-accent-black-400), 0.05);
 
   --input-border-radius: 4px;
   --input-height: 3rem;
   --input-padding-inline: 1.25rem;
 
   --page-bg-color: hsl(var(--clr-secondary-100));
+
+  --header-height: clamp(4.5rem, 4.02281rem + 2.036vw, 5rem);
 
   --container-bg-color: hsl(var(--clr-neutral-100));
 
@@ -48,10 +56,14 @@
 
   --datepicker-day-hover-bg-color: hsl(var(--clr-neutral-150));
 
-  --invoice-highlight-text-color: hsl(var(--clr-secondary-900));
-  --invoice-status-text-color: hsl(var(--clr-secondary-625));
-  --invoice-text-color: hsl(var(--clr-secondary-500));
+  --filter-container-bg-color: hsl(var(--clr-neutral-100));
+  --filter-container-shadow-color: hsl(var(--clr-secondary-700), 0.25);
 
+  --invoice-details-highlighted-text-color: hsl(var(--clr-secondary-900));
+  --invoice-details-text-color: hsl(var(--clr-secondary-500));
+  --invoice-details-status-text-color: hsl(var(--clr-secondary-625));
+
+  --invoice-item-highlighted-text-color: hsl(var(--clr-secondary-900));
   --invoice-item-client-text-color: hsl(var(--clr-secondary-625));
 
   --secondary-btn-bg-color: hsl(var(--clr-secondary-150));
@@ -86,6 +98,9 @@
 [data-theme="dark"] {
   --focus-outline-color: hsl(var(--clr-neutral-100));
 
+  --status-draft-text-color: hsl(var(--clr-secondary-200));
+  --status-draft-bg-color: hsl(var(--clr-secondary-200), 0.05);
+
   --page-bg-color: hsl(var(--clr-secondary-850));
 
   --container-bg-color: hsl(var(--clr-secondary-800));
@@ -97,10 +112,14 @@
 
   --datepicker-day-hover-bg-color: hsl(var(--clr-accent-blue-400));
 
-  --invoice-highlight-text-color: hsl(var(--clr-neutral-100));
-  --invoice-status-text-color: hsl(var(--clr-secondary-200));
-  --invoice-text-color: hsl(var(--clr-secondary-200));
+  --filter-container-bg-color: hsl(var(--clr-secondary-750));
+  --filter-container-shadow-color: hsl(var(--clr-neutral-900), 0.25);
 
+  --invoice-details-highlighted-text-color: hsl(var(--clr-neutral-100));
+  --invoice-details-text-color: hsl(var(--clr-secondary-200));
+  --invoice-details-status-text-color: hsl(var(--clr-secondary-200));
+
+  --invoice-item-highlighted-text-color: hsl(var(--clr-neutral-100));
   --invoice-item-client-text-color: hsl(var(--clr-neutral-100));
 
   --secondary-btn-bg-color: hsl(var(--clr-secondary-750));
