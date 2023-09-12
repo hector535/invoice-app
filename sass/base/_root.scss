@@ -19,6 +19,9 @@
   --clr-neutral-100: 0, 0%, 100%;
   --clr-neutral-150: 0, 0%, 94%;
   --clr-neutral-300: 216, 100%, 94%, 0.65;
+  --clr-neutral-350: 217, 26%, 97%;
+  --clr-neutral-400: 215, 24%, 80%;
+  --clr-neutral-500: 214, 17%, 51%;
   --clr-neutral-900: 0, 0%, 0%;
 
   --clr-accent-red-300: 0, 100%, 80%;
@@ -39,11 +42,21 @@
   --status-draft-text-color: hsl(var(--clr-accent-black-400));
   --status-draft-bg-color: hsl(var(--clr-accent-black-400), 0.05);
 
+  --z-index-backdrop: 50;
+  --z-index-modal: 100;
+  --z-index-drawer: 100;
+
   --input-border-radius: 4px;
   --input-height: 3rem;
   --input-padding-inline: 1.25rem;
 
+  --spinner-bg-color: hsl(var(--clr-neutral-400));
+  --spinner-color: hsl(var(--clr-neutral-500));
+
   --page-bg-color: hsl(var(--clr-secondary-100));
+
+  --form-page-bg-color: hsl(var(--clr-neutral-100));
+  --form-edit-page-hashtag-color: hsl(var(--clr-secondary-600));
 
   --header-height: clamp(4.5rem, 4.02281rem + 2.036vw, 5rem);
 
@@ -53,6 +66,8 @@
 
   --heading-text-color: hsl(var(--clr-secondary-900));
   --text-color: hsl(var(--clr-secondary-600));
+
+  --link-text-color: hsl(var(--clr-secondary-900));
 
   --datepicker-day-hover-bg-color: hsl(var(--clr-neutral-150));
 
@@ -81,6 +96,8 @@
 
   --label-text-color: hsl(var(--clr-secondary-500));
 
+  --form-field-label-color: hsl(var(--clr-secondary-500));
+
   --label-checkbox-color: hsl(var(--clr-secondary-800));
   --checkbox-bg-color: hsl(var(--clr-secondary-175));
 
@@ -96,6 +113,9 @@
 }
 
 [data-theme="dark"] {
+  --spinner-bg-color: hsl(var(--clr-neutral-500));
+  --spinner-color: hsl(var(--clr-neutral-350));
+
   --focus-outline-color: hsl(var(--clr-neutral-100));
 
   --status-draft-text-color: hsl(var(--clr-secondary-200));
@@ -103,12 +123,17 @@
 
   --page-bg-color: hsl(var(--clr-secondary-850));
 
+  --form-page-bg-color: hsl(var(--clr-secondary-850));
+  --form-edit-page-hashtag-color: hsla(225, 14%, 53%, 1);
+
   --container-bg-color: hsl(var(--clr-secondary-800));
 
   --sidebar-bg-color: hsl(var(--clr-secondary-800));
 
   --heading-text-color: hsl(var(--clr-neutral-100));
   --text-color: hsl(var(--clr-secondary-200));
+
+  --link-text-color: hsl(var(--clr-neutral-100));
 
   --datepicker-day-hover-bg-color: hsl(var(--clr-accent-blue-400));
 
@@ -136,6 +161,8 @@
   --select-option-hover-color: hsl(var(--clr-secondary-900), 0.4);
 
   --label-text-color: hsl(var(--clr-secondary-200));
+
+  --form-field-label-color: hsl(var(--clr-secondary-600));
 
   --label-checkbox-color: hsl(var(--clr-neutral-100));
   --checkbox-bg-color: hsl(var(--clr-secondary-800));

@@ -10,10 +10,10 @@ body {
   transition: background-color 0.4s ease;
 }
 
-:is(a, button, input, textarea, select, details, summary, div, label) {
+:is(a, button, details, summary, div, label) {
   &:focus-visible {
-    outline: var(--focus-outline-color) dotted 0.19rem;
-    outline-offset: 0.19rem;
+    outline: 3px dotted var(--focus-outline-color);
+    outline-offset: 3px;
   }
 }
 

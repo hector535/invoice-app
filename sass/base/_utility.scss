@@ -1,23 +1,5 @@
-.input_field {
-  font-size: 0.75rem;
-  font-weight: var(--fw-bold);
-  letter-spacing: -0.25px;
+.container {
+  width: min(90%, 45.625rem);
 
-  height: var(--input-height);
-  width: 100%;
-
-  border-radius: var(--input-border-radius);
-
-  padding-inline: var(--input-padding-inline);
-
-  color: var(--input-text-color);
-  background-color: var(--input-bg-color);
-  border: 1px solid var(--input-border-color);
-
-  transition: color 0.4s ease, background-color 0.4s ease,
-    border-color 0.4s ease;
-
-  &:focus {
-    border-color: hsl(var(--clr-primary-300));
-  }
+  margin-inline: auto;
 }
