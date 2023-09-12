@@ -1,10 +1,6 @@
 @use "/sass/abstracts/" as *;
 
-.page {
-  width: min(90%, 45.625rem);
-
-  margin-inline: auto;
-
+.main {
   padding-block: clamp(1rem, -0.7858rem + 8.929vw, 3.5rem);
 
   display: grid;

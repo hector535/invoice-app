@@ -1,65 +1,63 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Icon, Button } from "@/components";
-import { Filter, InvoiceList, invoices } from "@/features/invoices";
+import clsx from "clsx";
+import { Icon, Button, LoadingView, Drawer } from "@/components";
 import {
-  extractQueryStringValues,
-  filterInvoices,
-  getViewportSize,
-} from "./invoices.utils";
+  Filter,
+  InvoiceForm,
+  InvoiceList,
+  useGetInvoices,
+} from "@/features/invoices";
 import { VIEWPORT_WIDTH } from "@/config";
+import { getViewportSize } from "@/utils/viewport";
+import { extractQueryStringValues } from "./invoices.utils";
 import styles from "./invoices.module.scss";
 
 export const Invoices = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const filters = extractQueryStringValues(searchParams);
   const [openFilter, setOpenFilter] = useState(false);
-  const { draft, paid, pending } = extractQueryStringValues(searchParams);
-  const [filterOptions, setFilterOptions] = useState({ draft, paid, pending });
-  const filteredInvoices = filterInvoices(invoices, { draft, paid, pending });
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const { invoices, isFetching } = useGetInvoices(filters);
 
   const handleBtnClick = () => {
     const { vw } = getViewportSize();
 
     if (vw >= VIEWPORT_WIDTH.TABLET) {
-      console.log("open drawer");
+      setOpenDrawer(true);
     } else {
-      console.log("redirect to new form page");
+      navigate("/invoices/new");
     }
   };
 
-  const handleFilterChanges = (name: string, value: boolean) =>
-    setFilterOptions({
-      ...filterOptions,
-      [name]: value,
-    });
-
-  useEffect(() => {
-    setFilterOptions({ draft, paid, pending });
-  }, [draft, paid, pending, setFilterOptions]);
-
-  useEffect(() => {
-    const { draft, paid, pending } = filterOptions;
+  const handleFilterChanges = (name: string, value: boolean) => {
+    const updatedFilters = { ...filters, [name]: value };
+    const { draft, paid, pending } = updatedFilters;
 
     navigate(`/invoices?draft=${draft}&pending=${pending}&paid=${paid}`);
-  }, [filterOptions, navigate]);
+  };
 
   return (
-    <main className={styles.page}>
+    <main className={clsx("container", styles.main)}>
+      <Drawer open={openDrawer} onOutsideClick={() => setOpenDrawer(false)}>
+        <InvoiceForm onSave={() => setOpenDrawer(false)} />
+      </Drawer>
       <div className={styles.toolbar}>
         <div>
           <h1 className={styles.title}>Invoices</h1>
-          <p>{filteredInvoices.length} total invoices</p>
+          <p>{invoices.length} total invoices</p>
         </div>
 
         <Filter
-          options={filterOptions}
+          options={filters}
           open={openFilter}
           onClick={setOpenFilter}
           onChange={handleFilterChanges}
         />
 
         <Button
+          aria-label="New Invoice"
           onClick={handleBtnClick}
           icon={
             <div className={styles.circle}>
@@ -71,7 +69,10 @@ export const Invoices = () => {
         </Button>
       </div>
 
-      <InvoiceList invoices={filteredInvoices} onSelectInvoice={console.log} />
+      {isFetching && <LoadingView text="Loading..." />}
+      {!isFetching && (
+        <InvoiceList invoices={invoices} onSelectInvoice={console.log} />
+      )}
     </main>
   );
 };
