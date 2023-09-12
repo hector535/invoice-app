@@ -1,6 +1,6 @@
 import { Virtuoso } from "react-virtuoso";
 import { InvoiceListItem } from "../invoice-list-item/invoice-list-item";
-import { InvoiceListProps } from "./invoice-list.type";
+import { InvoiceListProps } from "./invoice-list.types";
 import styles from "./invoice-list.module.scss";
 
 export const InvoiceList = (props: InvoiceListProps) => {

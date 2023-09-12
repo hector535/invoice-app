@@ -13,7 +13,13 @@ export const Header = () => {
 
       <hr className={styles.divider} />
 
-      <img className={styles.avatar} src="/img/avatar.jpg" alt="avatar" />
+      <img
+        className={styles.avatar}
+        width={32}
+        height={32}
+        src="/img/avatar.jpg"
+        alt="avatar"
+      />
     </header>
   );
 };

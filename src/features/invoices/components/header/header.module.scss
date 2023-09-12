@@ -23,7 +23,7 @@
     padding-bottom: 1.5rem;
 
     height: 100%;
-    width: 103px;
+    width: 6.4375rem;
 
     border-radius: 0 20px 20px 0;
   }
@@ -89,9 +89,8 @@
 }
 
 .avatar {
-  aspect-ratio: 1;
-
   width: clamp(2rem, 1.82398rem + 0.751vw, 2.5rem);
+  height: clamp(2rem, 1.82398rem + 0.751vw, 2.5rem);
 
   border-radius: 100vmax;
 }

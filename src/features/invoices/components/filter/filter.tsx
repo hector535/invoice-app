@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Icon } from "@/components/icon/icon";
 import { Checkbox } from "@/components/checkbox/checkbox";
-import { FilterProps } from "./filter.type";
+import { FilterProps } from "./filter.types";
 import styles from "./filter.module.scss";
 
 export const Filter = (props: FilterProps) => {

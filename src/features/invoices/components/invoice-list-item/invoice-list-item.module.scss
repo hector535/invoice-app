@@ -26,7 +26,7 @@
   }
 
   @include min-breakpoint(48rem) {
-    grid-template-columns: auto 1fr 1fr 1fr auto auto;
+    grid-template-columns: 95px 1fr 1fr 1fr auto auto;
     grid-template-rows: none;
 
     padding-block: 1rem;

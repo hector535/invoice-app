@@ -26,11 +26,13 @@ export const ToggleSwitch = () => {
     <>
       {theme === "dark" ? (
         <IconButton
+          aria-label="Switch to light mode"
           icon={<Icon name="sun" />}
           onClick={() => handleToggle("light")}
         />
       ) : (
         <IconButton
+          aria-label="Switch to dark mode"
           icon={<Icon name="moon" />}
           onClick={() => handleToggle("dark")}
         />

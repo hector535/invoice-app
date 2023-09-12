@@ -22,13 +22,14 @@
     },
     "items": [
       {
+        "id": "c6ff9f0c-91b4-43b7-9e88-d82f05fbf4f7",
         "name": "Brand Guidelines",
         "quantity": 1,
-        "price": 1800.90,
-        "total": 1800.90
+        "price": 1800.9,
+        "total": 1800.9
       }
     ],
-    "total": 1800.90
+    "total": 1800.9
   },
   {
     "id": "XM9141",
@@ -53,19 +54,21 @@
     },
     "items": [
       {
+        "id": "ffeadbc6-7274-40b8-b795-92552a150a34",
         "name": "Banner Design",
         "quantity": 1,
-        "price": 156.00,
-        "total": 156.00
+        "price": 156.0,
+        "total": 156.0
       },
       {
+        "id": "070a1e67-fb46-4e4e-ade6-89ecce963302",
         "name": "Email Design",
         "quantity": 2,
-        "price": 200.00,
-        "total": 400.00
+        "price": 200.0,
+        "total": 400.0
       }
     ],
-    "total": 556.00
+    "total": 556.0
   },
   {
     "id": "RG0314",
@@ -90,6 +93,7 @@
     },
     "items": [
       {
+        "id": "0b286173-520b-46eb-bca8-84015279b1d4",
         "name": "Website Redesign",
         "quantity": 1,
         "price": 14002.33,
@@ -121,6 +125,7 @@
     },
     "items": [
       {
+        "id": "f1991d94-22fc-4249-abc0-c254d9ec4bd6",
         "name": "Logo Sketches",
         "quantity": 1,
         "price": 102.04,
@@ -152,16 +157,18 @@
     },
     "items": [
       {
+        "id": "b7e6a3c0-1c1c-4c7b-b66a-454e1adc45c0",
         "name": "New Logo",
         "quantity": 1,
         "price": 1532.33,
         "total": 1532.33
       },
       {
+        "id": "f9c33fae-8ee8-4697-8d11-3557e608ab78",
         "name": "Brand Guidelines",
         "quantity": 1,
-        "price": 2500.00,
-        "total": 2500.00
+        "price": 2500.0,
+        "total": 2500.0
       }
     ],
     "total": 4032.33
@@ -189,6 +196,7 @@
     },
     "items": [
       {
+        "id": "8cfdbda4-bf1e-4276-9ece-75bbe3d89916",
         "name": "Web Design",
         "quantity": 1,
         "price": 6155.91,
@@ -220,6 +228,7 @@
     },
     "items": [
       {
+        "id": "c4f52c40-da8e-452e-aac6-3ba7d9625c18",
         "name": "Logo Re-design",
         "quantity": 1,
         "price": 3102.04,

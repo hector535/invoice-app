@@ -1,3 +1,5 @@
+export type InvoiceStatus = "draft" | "pending" | "paid";
+
 export interface IInvoice {
   id: string;
   createdAt: string;
@@ -6,7 +8,7 @@ export interface IInvoice {
   paymentTerms: number;
   clientName: string;
   clientEmail: string;
-  status: "draft" | "pending" | "paid";
+  status: InvoiceStatus;
   senderAddress: IAddress;
   clientAddress: IAddress;
   items: IItem[];
@@ -21,6 +23,7 @@ export interface IAddress {
 }
 
 export interface IItem {
+  id: string;
   name: string;
   quantity: number;
   price: number;

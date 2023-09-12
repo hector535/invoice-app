@@ -1,0 +1,41 @@
+@use "/sass/abstracts/" as *;
+
+.form_list_item {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 60px 1fr 80px auto;
+  align-items: start;
+
+  //Item name field
+  > div:first-child {
+    grid-column: span 4;
+  }
+
+  > button {
+    margin-top: 2.5rem;
+  }
+
+  @include min-breakpoint(48rem) {
+    grid-template-columns: 3fr 4rem 2fr auto auto;
+
+    //Item name field
+    > div:first-child {
+      grid-column: auto;
+    }
+  }
+}
+
+.total_container {
+  display: grid;
+  gap: 0.625rem;
+
+  label {
+    color: var(--form-field-label-color);
+  }
+
+  span {
+    font-weight: var(--fw-bold);
+    margin-top: 1.125rem;
+    overflow-wrap: anywhere;
+  }
+}
