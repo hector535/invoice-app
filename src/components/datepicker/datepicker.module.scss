@@ -1,5 +1,61 @@
+.form_field {
+  display: grid;
+  gap: 0.625rem;
+}
+
+.label {
+  color: var(--form-field-label-color);
+}
+
 .wrapper {
   position: relative;
+}
+
+.input {
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.25px;
+
+  height: var(--input-height);
+  width: 100%;
+
+  border-radius: var(--input-border-radius);
+
+  padding-inline: var(--input-padding-inline);
+
+  color: var(--input-text-color);
+
+  background-color: var(--input-bg-color);
+
+  border: 1px solid var(--input-border-color);
+
+  outline: none;
+
+  transition: color 0.4s ease, background-color 0.4s ease,
+    border-color 0.4s ease;
+
+  &:focus:not(:disabled) {
+    border-color: hsl(var(--clr-primary-300));
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  border: 1px solid hsl(var(--clr-accent-red-300));
+
+  &:focus {
+    border-color: hsl(var(--clr-accent-red-400));
+  }
+}
+
+.error_message {
+  font-size: 0.625rem;
+  font-weight: var(--fw-bold);
+  color: hsl(var(--clr-accent-red-400));
 }
 
 .calendar_icon {
@@ -12,6 +68,7 @@
 
 .popper {
   margin-top: 15px;
+  z-index: 10;
 }
 
 .calendar {
@@ -110,7 +167,7 @@
       width: 9px;
 
       position: absolute;
-      top: 13px;
+      top: 0;
     }
 
     .react-datepicker__navigation-icon--previous:before {
@@ -140,7 +197,7 @@
           font-size: 0.944rem;
           font-weight: 700;
 
-          margin-top: 0;
+          margin-bottom: 8px;
         }
 
         .react-datepicker__day-names {

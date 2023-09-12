@@ -1,4 +1,4 @@
-import { IconButtonProps } from "./icon-button.type";
+import { IconButtonProps } from "./icon-button.types";
 import styles from "./icon-button.module.scss";
 
 export const IconButton = (props: IconButtonProps) => {

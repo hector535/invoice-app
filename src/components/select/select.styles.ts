@@ -1,20 +1,29 @@
 import { CSSObjectWithLabel } from "react-select";
 
-export const styles = {
+export const getStyles = (hasErrors: boolean) => ({
   control: (
     baseStyle: CSSObjectWithLabel,
     { isFocused }: { isFocused: boolean }
   ) => ({
     ...baseStyle,
     borderRadius: "var(--input-border-radius)",
-    borderColor: "var(--input-border-color)",
+    borderColor: hasErrors
+      ? "hsl(var(--clr-accent-red-300))"
+      : "var(--input-border-color)",
     backgroundColor: "var(--input-bg-color)",
     height: "var(--input-height)",
-    boxShadow: isFocused ? "0 0 0 1px hsl(var(--clr-primary-300))" : "none",
+    boxShadow:
+      isFocused && hasErrors
+        ? "0 0 0 1px hsl(var(--clr-accent-red-400))"
+        : isFocused
+        ? "0 0 0 1px hsl(var(--clr-primary-300))"
+        : "none",
     transition:
       "background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease",
     ":hover": {
-      borderColor: "hsl(var(--clr-primary-300))",
+      borderColor: hasErrors
+        ? "hsl(var(--clr-accent-red-400))"
+        : "hsl(var(--clr-primary-300))",
     },
   }),
   placeholder: (baseStyle: CSSObjectWithLabel) => ({
@@ -57,4 +66,4 @@ export const styles = {
         "background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease",
     };
   },
-};
+});

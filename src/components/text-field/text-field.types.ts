@@ -1,3 +1,4 @@
 export type TextFieldProps = {
-  className?: string;
+  label: string;
+  errorMessage?: string;
 } & React.ComponentPropsWithoutRef<"input">;

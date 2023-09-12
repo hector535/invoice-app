@@ -1,0 +1,48 @@
+.drawer {
+  --width: 38.5rem;
+
+  position: fixed;
+  top: var(--header-height);
+  left: calc(var(--width) * -1);
+  bottom: 0;
+  z-index: var(--z-index-drawer);
+
+  width: 38.5rem;
+
+  padding-top: 3.5rem;
+
+  border-radius: 0 20px 20px 0;
+
+  background-color: var(--page-bg-color);
+
+  overflow: auto;
+
+  transition: left 0.4s ease;
+}
+
+.drawer__open {
+  left: 0;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+
+  z-index: var(--z-index-backdrop);
+
+  background-color: hsla(0, 0%, 0%, 0.6);
+
+  opacity: 0;
+
+  width: 0;
+  height: 0;
+
+  transition: opacity 0.4s ease;
+}
+
+.backdrop__visible {
+  opacity: 1;
+
+  width: auto;
+  height: auto;
+}

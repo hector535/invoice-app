@@ -1,9 +1,13 @@
 import { useRef } from "react";
 import BaseSelect, { SelectInstance } from "react-select";
-import { SelectProps } from "./select.type";
-import { styles } from "./select.styles";
+import clsx from "clsx";
+import { SelectProps } from "./select.types";
+import { getStyles } from "./select.styles";
+import css from "./select.module.scss";
 
 export function Select<T>(props: SelectProps<T>) {
+  const { label, name, errorMessage, ...restProps } = props;
+
   const ref = useRef<SelectInstance<T>>(null);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -15,11 +19,19 @@ export function Select<T>(props: SelectProps<T>) {
   };
 
   return (
-    <BaseSelect
-      {...props}
-      styles={styles}
-      onKeyDown={handleKeyDown}
-      ref={ref}
-    />
+    <div className={clsx(css.form_field)}>
+      <label htmlFor={name} className={css.label}>
+        {label}
+      </label>
+      <BaseSelect
+        {...restProps}
+        styles={getStyles(!!errorMessage)}
+        onKeyDown={handleKeyDown}
+        ref={ref}
+      />
+      {errorMessage && (
+        <span className={css.error_message}>{errorMessage}</span>
+      )}
+    </div>
   );
 }

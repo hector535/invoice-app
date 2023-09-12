@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { type CheckboxProps } from "./checkbox.type";
+import { type CheckboxProps } from "./checkbox.types";
 import styles from "./checkbox.module.scss";
 
 export const Checkbox = (props: CheckboxProps) => {
