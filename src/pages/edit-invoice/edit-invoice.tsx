@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Icon, Link } from "@/components";
 import { InvoiceForm, useGetInvoiceById } from "@/features/invoices";
-import { useViewport } from "@/hooks/useViewport";
+import { useViewport } from "@/hooks";
 import { VIEWPORT_WIDTH } from "@/config";
 import styles from "./edit-invoice.module.scss";
 
@@ -12,26 +12,28 @@ export const EditInvoice = () => {
   const { invoice } = useGetInvoiceById(invoiceId!);
   const { vw } = useViewport();
 
-  const handleSaveForm = () => {
-    navigate("/invoices");
-  };
-
   useEffect(() => {
-    if (vw > VIEWPORT_WIDTH.TABLET) navigate("/invoices");
+    if (vw >= VIEWPORT_WIDTH.TABLET) navigate("/invoices");
   }, [vw, navigate]);
 
   return (
     <main className={styles.main}>
       <div className={styles.wrapper}>
-        <Link
-          className="container"
-          to="/invoices"
-          icon={<Icon name="arrow-left" />}
-        >
-          Go back
-        </Link>
+        <div className="container">
+          <Link
+            to=""
+            icon={<Icon name="arrow-left" />}
+            onClick={() => navigate(-1)}
+          >
+            Go back
+          </Link>
+        </div>
 
-        <InvoiceForm defaultValues={invoice} onSave={handleSaveForm} />
+        <InvoiceForm
+          defaultValues={invoice}
+          onSave={() => navigate(-1)}
+          onCancel={() => navigate(-1)}
+        />
       </div>
     </main>
   );

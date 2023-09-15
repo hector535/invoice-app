@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import clsx from "clsx";
 import { Icon, Button, LoadingView, Drawer } from "@/components";
@@ -7,19 +7,28 @@ import {
   InvoiceForm,
   InvoiceList,
   useGetInvoices,
+  EmptyListMessage,
 } from "@/features/invoices";
 import { VIEWPORT_WIDTH } from "@/config";
-import { getViewportSize } from "@/utils/viewport";
+import { getViewportSize } from "@/utils";
 import { extractQueryStringValues } from "./invoices.utils";
+import { useViewport } from "@/hooks";
 import styles from "./invoices.module.scss";
 
 export const Invoices = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const { vw } = useViewport();
   const filters = extractQueryStringValues(searchParams);
   const [openFilter, setOpenFilter] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
   const { invoices, isFetching } = useGetInvoices(filters);
+
+  useEffect(() => {
+    if (vw < VIEWPORT_WIDTH.TABLET) {
+      setOpenDrawer(false);
+    }
+  }, [vw]);
 
   const handleBtnClick = () => {
     const { vw } = getViewportSize();
@@ -69,9 +78,13 @@ export const Invoices = () => {
         </Button>
       </div>
 
+      {!invoices.length && !isFetching && <EmptyListMessage />}
       {isFetching && <LoadingView text="Loading..." />}
-      {!isFetching && (
-        <InvoiceList invoices={invoices} onSelectInvoice={console.log} />
+      {!isFetching && !!invoices.length && (
+        <InvoiceList
+          invoices={invoices}
+          onSelectInvoice={(id) => navigate(`/invoices/${id}`)}
+        />
       )}
     </main>
   );
