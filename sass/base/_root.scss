@@ -44,11 +44,14 @@
 
   --z-index-backdrop: 50;
   --z-index-modal: 100;
-  --z-index-drawer: 100;
+  --z-index-drawer: 75;
+  --z-index-sidebar: 80;
 
   --input-border-radius: 4px;
   --input-height: 3rem;
   --input-padding-inline: 1.25rem;
+
+  --scrollbar-bg-color: hsl(var(--clr-secondary-200));
 
   --spinner-bg-color: hsl(var(--clr-neutral-400));
   --spinner-color: hsl(var(--clr-neutral-500));
@@ -66,6 +69,8 @@
 
   --heading-text-color: hsl(var(--clr-secondary-900));
   --text-color: hsl(var(--clr-secondary-600));
+
+  --empty-list-message-text-color: hsl(var(--clr-secondary-600));
 
   --link-text-color: hsl(var(--clr-secondary-900));
 
@@ -107,6 +112,7 @@
 
   --table-highlight-content-text-color: hsl(var(--clr-secondary-900));
   --table-content-text-color: hsl(var(--clr-secondary-500));
+  --table-price-qty-text-color: hsl(var(--clr-secondary-500));
   --table-header-text-color: hsl(var(--clr-secondary-500));
   --table-body-bg-color: hsl(var(--clr-secondary-150));
   --table-footer-bg-color: hsl(var(--clr-accent-black-400));
@@ -115,6 +121,8 @@
 [data-theme="dark"] {
   --spinner-bg-color: hsl(var(--clr-neutral-500));
   --spinner-color: hsl(var(--clr-neutral-350));
+
+  --scrollbar-bg-color: hsl(var(--clr-secondary-750));
 
   --focus-outline-color: hsl(var(--clr-neutral-100));
 
@@ -132,6 +140,8 @@
 
   --heading-text-color: hsl(var(--clr-neutral-100));
   --text-color: hsl(var(--clr-secondary-200));
+
+  --empty-list-message-text-color: hsl(var(--clr-secondary-600));
 
   --link-text-color: hsl(var(--clr-neutral-100));
 
@@ -173,6 +183,7 @@
 
   --table-highlight-content-text-color: hsl(var(--clr-neutral-100));
   --table-content-text-color: hsl(var(--clr-secondary-200));
+  --table-price-qty-text-color: hsl(var(--clr-secondary-600));
   --table-header-text-color: hsl(var(--clr-secondary-200));
   --table-body-bg-color: hsl(var(--clr-secondary-750));
   --table-footer-bg-color: hsl(var(--clr-secondary-900));

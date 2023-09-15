@@ -26,6 +26,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--clr-neutral-600-hsl);
+  background: hsl(var(--clr-neutral-500));
   border-radius: 100vmax;
 }
