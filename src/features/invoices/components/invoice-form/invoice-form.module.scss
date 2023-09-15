@@ -9,8 +9,28 @@
   gap: 1.5rem;
 
   @include min-breakpoint(48rem) {
-    width: 31.5rem;
-    margin-bottom: 2rem;
+    margin-inline: 0;
+
+    width: 100%;
+
+    padding: 3.5rem;
+
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-bg-color);
+      border-radius: 100vmax;
+
+      transition: background-color 0.4s ease;
+    }
   }
 }
 
@@ -203,6 +223,7 @@
     @include min-breakpoint(48rem) {
       grid-template-columns: 1fr auto auto;
       justify-content: start;
+      align-self: end;
 
       position: sticky;
       bottom: 0;
@@ -222,5 +243,14 @@
   &.form_actions_edit {
     justify-content: end;
     grid-template-columns: repeat(2, auto);
+
+    @include min-breakpoint(48rem) {
+      align-self: end;
+
+      position: sticky;
+      bottom: 0;
+
+      height: 6.875rem;
+    }
   }
 }

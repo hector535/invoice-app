@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Icon } from "@/components/icon/icon";
-import { IconButton } from "@/components/icon-button/icon-button";
+import { Icon, IconButton } from "@/components";
 
 const currentTheme = (localStorage.getItem("theme") || "light") as
   | "light"

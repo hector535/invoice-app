@@ -1,9 +1,15 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { FilterOptions, IInvoice } from "../../types";
-import { addInvoice, getInvoiceById, getInvoices } from "./invoices";
+import {
+  addInvoice,
+  deleteInvoiceById,
+  getInvoiceById,
+  getInvoices,
+  updateInvoice,
+} from "./invoices";
 
 export const useGetInvoices = (filters: FilterOptions) => {
-  const { data, ...rest } = useQuery(["invoices", filters], () =>
+  const { data, ...rest } = useQuery(["FilteredInvoices", filters], () =>
     getInvoices(filters)
   );
 
@@ -33,7 +39,30 @@ export const useSaveInvoice = () => {
 
   return useMutation(addInvoice, {
     onSuccess: async () => {
-      await queryClient.invalidateQueries("invoices");
+      await queryClient.invalidateQueries("FilteredInvoices");
+    },
+  });
+};
+
+export const useUpdateInvoice = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation(updateInvoice, {
+    onSuccess: async (_, { id }) => {
+      await queryClient.invalidateQueries("FilteredInvoices");
+      await queryClient.invalidateQueries({
+        queryKey: ["invoices", id],
+      });
+    },
+  });
+};
+
+export const useDeleteInvoiceById = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation(deleteInvoiceById, {
+    onSuccess: async () => {
+      await queryClient.invalidateQueries("FilteredInvoices");
     },
   });
 };

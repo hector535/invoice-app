@@ -1,12 +1,17 @@
 import { useEffect, useRef } from "react";
-import { Icon } from "@/components/icon/icon";
-import { Checkbox } from "@/components/checkbox/checkbox";
-import { FilterProps } from "./filter.types";
+import { Icon, Checkbox } from "@/components";
+import { type FilterProps } from "./filter.types";
 import styles from "./filter.module.scss";
 
 export const Filter = (props: FilterProps) => {
   const { open, options, onClick, onChange } = props;
   const divRef = useRef<HTMLDivElement>(null);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.code !== "Space") return;
+
+    onClick(true);
+  };
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -27,8 +32,11 @@ export const Filter = (props: FilterProps) => {
       tabIndex={0}
       className={styles.filter}
       onClick={() => onClick(true)}
+      onKeyDown={handleKeyDown}
     >
-      <span className={styles.text}></span>
+      <p className={styles.text}>
+        Filter <span>by status</span>
+      </p>
       <Icon name="arrow-down" />
 
       {open && (

@@ -1,16 +1,21 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { Header } from "../../components";
+import { Header } from "@/features/invoices";
+import { ErrorBoundary } from "react-error-boundary";
+import { LoadingView, ErrorView } from "@/components";
 import styles from "./invoice-layout.module.scss";
-import { LoadingView } from "@/components/loading-view/loading-view";
 
 export const InvoiceLayout = () => {
   return (
     <div className={styles.wrapper}>
-      <Header />
-      <Suspense fallback={<LoadingView text="Loading..." fullscreen />}>
-        <Outlet />
-      </Suspense>
+      <ErrorBoundary
+        FallbackComponent={(props) => <ErrorView fullscreen {...props} />}
+      >
+        <Suspense fallback={<LoadingView text="Loading..." fullscreen />}>
+          <Header />
+          <Outlet />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 };

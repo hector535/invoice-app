@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { StatusProps } from "./status.types";
+import { type StatusProps } from "./status.types";
 import styles from "./status.module.scss";
 
 export const Status = (props: StatusProps) => {

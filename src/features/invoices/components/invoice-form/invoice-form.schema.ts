@@ -25,12 +25,13 @@ const addressSchema = z.object({
 });
 
 export const schema = z.object({
+  id: z.string().optional(),
   clientName: z
     .string()
     .trim()
     .min(1, { message: "Required" })
     .min(4, { message: "Min length: 4" })
-    .max(255, { message: "Max length: 255" }),
+    .max(40, { message: "Max length: 40" }),
   clientEmail: z
     .string()
     .trim()

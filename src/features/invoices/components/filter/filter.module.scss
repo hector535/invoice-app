@@ -8,15 +8,17 @@
   position: relative;
 }
 
-.text::before {
-  content: "Filter";
-
-  @include min-breakpoint(32rem) {
-    content: "Filter by status";
+.text {
+  span {
+    display: none;
   }
 
   @include min-breakpoint(48rem) {
     font-weight: var(--fw-bold);
+
+    span {
+      display: inline;
+    }
   }
 }
 

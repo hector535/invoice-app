@@ -3,4 +3,8 @@
     display: grid;
     gap: 1rem;
   }
+
+  [data-test-id="virtuoso-scroller"] {
+    scrollbar-width: thin;
+  }
 }

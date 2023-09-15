@@ -1,6 +1,6 @@
 import { ReactComponent as Logo } from "@/assets/logo/logo.svg";
+import { ToggleSwitch } from "@/features/invoices";
 import styles from "./header.module.scss";
-import { ToggleSwitch } from "../toggle-switch/toggle-switch";
 
 export const Header = () => {
   return (

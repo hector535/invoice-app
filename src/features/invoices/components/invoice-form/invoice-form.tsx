@@ -1,20 +1,31 @@
+import { useEffect } from "react";
 import clsx from "clsx";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { v4 as uuidv4 } from "uuid";
 import { TextField, Button, DatePicker, Select } from "@/components";
-import { InvoiceFormProps, InvoiceFormSchema } from "./invoice-form.types";
 import { schema } from "./invoice-form.schema";
-import { dateToString, stringToDate } from "../../utils/date";
-import { InvoiceFormItem } from "../invoice-form-item/invoice-form-item";
+import {
+  InvoiceFormItem,
+  dateToString,
+  stringToDate,
+  paymentOptions,
+  useSaveInvoice,
+  useUpdateInvoice,
+  IInvoice,
+} from "@/features/invoices";
 import { composeForm } from "./invoice-form.utils";
-import { paymentOptions } from "../../data";
-import { useSaveInvoice } from "../../api";
+import {
+  type InvoiceFormProps,
+  type InvoiceFormSchema,
+} from "./invoice-form.types";
 import styles from "./invoice-form.module.scss";
 
 export const InvoiceForm = (props: InvoiceFormProps) => {
   const { defaultValues, onSave, onCancel } = props;
-  const { mutate, isLoading } = useSaveInvoice();
+  const { mutate: saveInvoice, isLoading: isSavingInvoice } = useSaveInvoice();
+  const { mutate: updateInvoice, isLoading: isUpdatingInvoice } =
+    useUpdateInvoice();
 
   const {
     control,
@@ -35,31 +46,42 @@ export const InvoiceForm = (props: InvoiceFormProps) => {
 
   const isEditMode = !!defaultValues;
 
-  const handleCancelOrDiscardClick = () => {
-    if (isEditMode) return onCancel?.();
+  const successCallback = {
+    onSuccess: async () => {
+      reset();
+      onSave?.();
+    },
+  };
 
+  useEffect(() => {
+    reset(defaultValues);
+  }, [defaultValues, reset]);
+
+  const handleCancelOrDiscardClick = () => {
     reset();
+
+    if (isEditMode) return onCancel?.();
+  };
+
+  const performMutation = (form: IInvoice) => {
+    if (isEditMode) {
+      updateInvoice(form, successCallback);
+    } else {
+      saveInvoice(form, successCallback);
+    }
   };
 
   const handleSaveDraftClick = async () => {
     const form = getValues();
     const composedForm = composeForm(form, "draft");
 
-    mutate(composedForm, {
-      onSuccess: () => {
-        onSave?.();
-      },
-    });
+    performMutation(composedForm as IInvoice);
   };
 
   const submit = handleSubmit((data) => {
     const composedForm = composeForm(data, "pending");
 
-    mutate(composedForm, {
-      onSuccess: () => {
-        onSave?.();
-      },
-    });
+    performMutation(composedForm as IInvoice);
   });
 
   return (
@@ -150,7 +172,7 @@ export const InvoiceForm = (props: InvoiceFormProps) => {
                   errorMessage={errors.createdAt?.message}
                   selected={value ? stringToDate(value) : null}
                   onChange={(date) => onChange(dateToString(date as Date))}
-                  disabled={isEditMode}
+                  disabled={isEditMode && defaultValues.status !== "draft"}
                 />
               )}
             />
@@ -211,8 +233,14 @@ export const InvoiceForm = (props: InvoiceFormProps) => {
       <div
         className={clsx(
           styles.form_actions,
-          { [styles.form_actions_new]: !isEditMode },
-          { [styles.form_actions_edit]: isEditMode }
+          {
+            [styles.form_actions_new]:
+              !isEditMode || defaultValues.status === "draft",
+          },
+          {
+            [styles.form_actions_edit]:
+              isEditMode && defaultValues.status !== "draft",
+          }
         )}
       >
         <Button
@@ -220,21 +248,29 @@ export const InvoiceForm = (props: InvoiceFormProps) => {
           type="button"
           onClick={handleCancelOrDiscardClick}
         >
-          {isEditMode ? "Cancel" : "Discard"}
+          {isEditMode && defaultValues.status !== "draft"
+            ? "Cancel"
+            : "Discard"}
         </Button>
-        {!isEditMode && (
+        {(!isEditMode || defaultValues.status === "draft") && (
           <Button
             type="button"
             variant="tertiary"
-            loading={isLoading}
-            disabled={isLoading}
+            loading={isSavingInvoice || isUpdatingInvoice}
+            disabled={isSavingInvoice || isUpdatingInvoice}
             onClick={handleSaveDraftClick}
           >
             Save as Draft
           </Button>
         )}
-        <Button form="main-form" loading={isLoading} disabled={isLoading}>
-          {isEditMode ? "Save Changes" : "Save & Send"}
+        <Button
+          form="main-form"
+          loading={isSavingInvoice || isUpdatingInvoice}
+          disabled={isSavingInvoice || isUpdatingInvoice}
+        >
+          {isEditMode && defaultValues.status !== "draft"
+            ? "Save Changes"
+            : "Save & Send"}
         </Button>
       </div>
     </>

@@ -1,11 +1,6 @@
 import { currencyFormatter } from "@/lib/intl-number";
 import { stringToDate } from "../../utils/date";
-
-const dateFormatter = new Intl.DateTimeFormat(undefined, {
-  year: "numeric",
-  month: "short",
-  day: "2-digit",
-});
+import { dateFormatter } from "@/lib/intl-date";
 
 export const toCurrency = (num: number) => currencyFormatter.format(num);
 

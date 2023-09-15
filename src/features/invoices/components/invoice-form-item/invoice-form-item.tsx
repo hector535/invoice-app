@@ -1,8 +1,8 @@
-import { Icon, IconButton, TextField } from "@/components";
-import { InvoiceFormItemProps } from "./invoice-form-item.types";
-import styles from "./invoice-form-item.module.scss";
 import { useWatch } from "react-hook-form";
-import { currencyFormatter } from "@/lib/intl-number";
+import { Icon, IconButton, TextField } from "@/components";
+import { currencyFormatter } from "@/lib";
+import { type InvoiceFormItemProps } from "./invoice-form-item.types";
+import styles from "./invoice-form-item.module.scss";
 
 export const InvoiceFormItem = (props: InvoiceFormItemProps) => {
   const { index, control, errors, register, remove } = props;
@@ -36,7 +36,11 @@ export const InvoiceFormItem = (props: InvoiceFormItemProps) => {
         <span>{currencyFormatter.format(total)}</span>
       </div>
 
-      <IconButton icon={<Icon name="delete" />} onClick={() => remove(index)} />
+      <IconButton
+        aria-label="Delete"
+        icon={<Icon name="delete" />}
+        onClick={() => remove(index)}
+      />
     </div>
   );
 };

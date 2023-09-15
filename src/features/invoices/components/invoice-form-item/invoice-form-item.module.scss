@@ -16,7 +16,7 @@
   }
 
   @include min-breakpoint(48rem) {
-    grid-template-columns: 3fr 4rem 2fr auto auto;
+    grid-template-columns: 3fr 4rem 2fr 5rem auto;
 
     //Item name field
     > div:first-child {
