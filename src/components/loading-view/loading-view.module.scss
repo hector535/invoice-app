@@ -1,3 +1,5 @@
+@use "/sass/abstracts/" as *;
+
 .loading_container {
   display: grid;
   gap: 2rem;
@@ -19,4 +21,8 @@
 
 .fullscreen {
   min-height: 100vh;
+
+  @include min-breakpoint(90rem) {
+    grid-column: span 2;
+  }
 }

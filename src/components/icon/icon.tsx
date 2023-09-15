@@ -7,7 +7,7 @@ import { ReactComponent as DeleteIcon } from "@/assets/icons/icon-delete.svg";
 import { ReactComponent as MoonIcon } from "@/assets/icons/icon-moon.svg";
 import { ReactComponent as SunIcon } from "@/assets/icons/icon-sun.svg";
 import { ReactComponent as PlusIcon } from "@/assets/icons/icon-plus.svg";
-import { IconProps } from "./icon.types";
+import { type IconProps } from "./icon.types";
 
 export const Icon = (props: IconProps) => {
   const { name, ...restProps } = props;

@@ -1,6 +1,6 @@
 import { Link as BaseLink } from "react-router-dom";
 import clsx from "clsx";
-import { LinkProps } from "./link.types";
+import { type LinkProps } from "./link.types";
 import styles from "./link.module.scss";
 
 export const Link = (props: LinkProps) => {

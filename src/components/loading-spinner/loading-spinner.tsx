@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { LoadingSpinnerProps } from "./loading-spinner.types";
+import { type LoadingSpinnerProps } from "./loading-spinner.types";
 import styles from "./loading-spinner.module.scss";
 
 export const LoadingSpinner = (props: LoadingSpinnerProps) => {

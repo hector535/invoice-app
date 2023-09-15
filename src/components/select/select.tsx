@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import BaseSelect, { SelectInstance } from "react-select";
 import clsx from "clsx";
-import { SelectProps } from "./select.types";
+import { type SelectProps } from "./select.types";
 import { getStyles } from "./select.styles";
 import css from "./select.module.scss";
 

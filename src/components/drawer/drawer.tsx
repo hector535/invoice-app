@@ -1,10 +1,9 @@
 import ReactDOM from "react-dom";
 import { useEffect } from "react";
-import { DrawerProps } from "./drawer.types";
-import styles from "./drawer.module.scss";
 import clsx from "clsx";
-
-const root = document.getElementById("overlays");
+import { Backdrop } from "@/components";
+import { type DrawerProps } from "./drawer.types";
+import styles from "./drawer.module.scss";
 
 export const Drawer = (props: DrawerProps) => {
   const { open, children, onOutsideClick } = props;
@@ -18,11 +17,8 @@ export const Drawer = (props: DrawerProps) => {
       <div className={clsx(styles.drawer, { [styles.drawer__open]: open })}>
         {children}
       </div>
-      <div
-        className={clsx(styles.backdrop, { [styles.backdrop__visible]: open })}
-        onClick={onOutsideClick}
-      ></div>
+      <Backdrop show={open} onClick={onOutsideClick} />
     </>,
-    root!
+    document.body
   );
 };

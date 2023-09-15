@@ -1,3 +1,5 @@
+@use "/sass/abstracts/" as *;
+
 .drawer {
   --width: 38.5rem;
 
@@ -9,40 +11,24 @@
 
   width: 38.5rem;
 
-  padding-top: 3.5rem;
-
   border-radius: 0 20px 20px 0;
 
   background-color: var(--page-bg-color);
 
-  overflow: auto;
+  overflow: hidden;
 
   transition: left 0.4s ease;
+
+  @include min-breakpoint(90rem) {
+    top: 0;
+  }
 }
 
 .drawer__open {
   left: 0;
-}
+  display: grid;
 
-.backdrop {
-  position: fixed;
-  inset: 0;
-
-  z-index: var(--z-index-backdrop);
-
-  background-color: hsla(0, 0%, 0%, 0.6);
-
-  opacity: 0;
-
-  width: 0;
-  height: 0;
-
-  transition: opacity 0.4s ease;
-}
-
-.backdrop__visible {
-  opacity: 1;
-
-  width: auto;
-  height: auto;
+  @include min-breakpoint(90rem) {
+    left: 6.4375rem;
+  }
 }

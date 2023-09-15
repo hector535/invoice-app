@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import { LoadingSpinner } from "../loading-spinner/loading-spinner";
-import { LoadingViewProps } from "./loading-view.types";
+import { LoadingSpinner } from "@/components";
+import { type LoadingViewProps } from "./loading-view.types";
 import style from "./loading-view.module.scss";
 
 export const LoadingView = (props: LoadingViewProps) => {

@@ -1,7 +1,7 @@
 import BaseDatePicker from "react-datepicker";
 import clsx from "clsx";
-import { Icon } from "../icon/icon";
-import { DatePickerProps } from "./datepicker.types";
+import { Icon } from "@/components";
+import { type DatePickerProps } from "./datepicker.types";
 import styles from "./datepicker.module.scss";
 
 export const DatePicker = (props: DatePickerProps) => {
