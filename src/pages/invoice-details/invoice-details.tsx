@@ -16,7 +16,7 @@ import { VIEWPORT_WIDTH } from "@/config";
 import { dateFormatter } from "@/lib";
 import styles from "./invoice-details.module.scss";
 
-export const InvoiceDetails = () => {
+const InvoiceDetails = () => {
   const { invoiceId } = useParams();
   const navigate = useNavigate();
   const { invoice, isFetching } = useGetInvoiceById(invoiceId!);
@@ -189,3 +189,5 @@ export const InvoiceDetails = () => {
     </>
   );
 };
+
+export default InvoiceDetails;

@@ -6,7 +6,7 @@ import { useViewport } from "@/hooks";
 import { VIEWPORT_WIDTH } from "@/config";
 import styles from "./edit-invoice.module.scss";
 
-export const EditInvoice = () => {
+const EditInvoice = () => {
   const navigate = useNavigate();
   const { invoiceId } = useParams();
   const { invoice } = useGetInvoiceById(invoiceId!);
@@ -38,3 +38,5 @@ export const EditInvoice = () => {
     </main>
   );
 };
+
+export default EditInvoice;

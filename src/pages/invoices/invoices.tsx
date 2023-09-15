@@ -15,7 +15,7 @@ import { extractQueryStringValues } from "./invoices.utils";
 import { useViewport } from "@/hooks";
 import styles from "./invoices.module.scss";
 
-export const Invoices = () => {
+const Invoices = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { vw } = useViewport();
@@ -89,3 +89,5 @@ export const Invoices = () => {
     </main>
   );
 };
+
+export default Invoices;

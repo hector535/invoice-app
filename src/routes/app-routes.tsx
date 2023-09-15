@@ -1,6 +1,15 @@
+import React from "react";
 import { Navigate } from "react-router-dom";
 import { InvoiceLayout } from "@/features/invoices";
-import { Invoices, InvoiceDetails, NewInvoice, EditInvoice } from "@/pages";
+
+const Invoices = React.lazy(() => import("@/pages/invoices/invoices"));
+const InvoiceDetails = React.lazy(
+  () => import("@/pages/invoice-details/invoice-details")
+);
+const NewInvoice = React.lazy(() => import("@/pages/new-invoice/new-invoice"));
+const EditInvoice = React.lazy(
+  () => import("@/pages/edit-invoice/edit-invoice")
+);
 
 export const appRoutes = [
   {

@@ -6,7 +6,7 @@ import { useViewport } from "@/hooks";
 import { VIEWPORT_WIDTH } from "@/config";
 import styles from "./new-invoice.module.scss";
 
-export const NewInvoice = () => {
+const NewInvoice = () => {
   const navigate = useNavigate();
   const { vw } = useViewport();
 
@@ -32,3 +32,5 @@ export const NewInvoice = () => {
     </main>
   );
 };
+
+export default NewInvoice;
