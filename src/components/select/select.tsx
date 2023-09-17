@@ -25,6 +25,8 @@ export function Select<T>(props: SelectProps<T>) {
       </label>
       <BaseSelect
         {...restProps}
+        inputId={name}
+        name={name}
         styles={getStyles(!!errorMessage)}
         onKeyDown={handleKeyDown}
         ref={ref}

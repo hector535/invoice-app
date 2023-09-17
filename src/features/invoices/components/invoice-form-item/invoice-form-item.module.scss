@@ -29,13 +29,17 @@
   display: grid;
   gap: 0.625rem;
 
-  label {
+  .total {
     color: var(--form-field-label-color);
+
+    transition: color 0.4s ease;
   }
 
   span {
-    font-weight: var(--fw-bold);
     margin-top: 1.125rem;
+
+    font-weight: var(--fw-bold);
+
     overflow-wrap: anywhere;
   }
 }

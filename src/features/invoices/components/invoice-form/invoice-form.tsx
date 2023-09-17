@@ -86,7 +86,7 @@ export const InvoiceForm = (props: InvoiceFormProps) => {
 
   return (
     <>
-      <div className={styles.wrapper}>
+      <article className={styles.wrapper}>
         <h1 className={styles.main_title}>
           {isEditMode ? "Edit " : "New Invoice"}
           {isEditMode && <span>{defaultValues.id}</span>}
@@ -229,7 +229,7 @@ export const InvoiceForm = (props: InvoiceFormProps) => {
             </Button>
           </section>
         </form>
-      </div>
+      </article>
       <div
         className={clsx(
           styles.form_actions,

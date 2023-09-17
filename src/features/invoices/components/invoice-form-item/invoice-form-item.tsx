@@ -32,7 +32,7 @@ export const InvoiceFormItem = (props: InvoiceFormItemProps) => {
         {...register(`items.${index}.price`, { valueAsNumber: true })}
       />
       <div className={styles.total_container}>
-        <label className={styles.label}>Total</label>
+        <p className={styles.total}>Total</p>
         <span>{currencyFormatter.format(total)}</span>
       </div>
 
